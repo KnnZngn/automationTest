@@ -39,7 +39,7 @@ public class Day01_BasicNavigations {
         driver.navigate().to("https://www.amazon.com/");
         Thread.sleep(3000);
 
-//     Navigate back to youtube
+//     Navigate back to YouTube
         driver.navigate().back();
         Thread.sleep(3000);
 

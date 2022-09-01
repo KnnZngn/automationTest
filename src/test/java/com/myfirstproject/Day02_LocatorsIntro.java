@@ -62,7 +62,6 @@ public class Day02_LocatorsIntro {
         List<WebElement> linkList=driver.findElements(By.tagName("a"));//returns the total number of link on the page
         int numOfLink = linkList.size();
         System.out.println("Number of link : "+numOfLink);
-
 //        Print all link names //for each loop kullaniriz for(WebElement w: list)
         for (WebElement eachElement: linkList){
             System.out.println(eachElement.getText());

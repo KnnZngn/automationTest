@@ -44,6 +44,7 @@ public class Day04_Dropdown {
         Select select = new Select(dropdownElement);
 //        3. Select any option using select object
         select.selectByIndex(1);//index starts at 0
+
     }
 
     @Test

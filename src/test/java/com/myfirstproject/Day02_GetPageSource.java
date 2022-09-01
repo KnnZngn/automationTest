@@ -4,6 +4,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.time.Duration;
+
 public class Day02_GetPageSource {
 
     public static void main(String[] args) {
@@ -11,6 +13,7 @@ public class Day02_GetPageSource {
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.amazon.com");
         driver.manage().window().maximize();
+
         String pageSource = driver.getPageSource();// getPageSource(); returns the page source as String
 //        System.out.println(pageSource);
         //ctrl F ile manual olarak registry kelimesini bulabiliriz
