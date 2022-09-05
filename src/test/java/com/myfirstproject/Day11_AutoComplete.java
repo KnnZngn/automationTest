@@ -19,11 +19,11 @@ public class Day11_AutoComplete extends TestBase {
 
 //        ui-menu-item WILL ONLY BE AVAILABLE AFTER USER TYPE IN THE INPUT
 //        TESTER SHOULD MAE A GOOD MANUAL TESTING TO GET OBSERVE THE BEHAVIOUR TO LOCATE THE ELEMENT
-        WebElement succession = driver.findElement(By.className("ui-menu-item"));
-//        succession.click();//works
+        WebElement suggestion = driver.findElement(By.className("ui-menu-item"));
+        //suggestion.click();//works
 
 //        ALTERNATIVELY i can click with JS
-        clickByJS(succession);
+        clickByJS(suggestion);
 
     }
 
@@ -37,10 +37,10 @@ public class Day11_AutoComplete extends TestBase {
 
 //        ui-menu-item WILL ONLY BE AVAILABLE AFTER USER TYPE IN THE INPUT
 //        TESTER SHOULD MAE A GOOD MANUAL TESTING TO GET OBSERVE THE BEHAVIOUR TO LOCATE THE ELEMENT
-        List<WebElement> succession = driver.findElements(By.className("ui-menu-item"));
+        List<WebElement> allsSuggestions = driver.findElements(By.className("ui-menu-item"));
 
 //        Click option Java
-        for (WebElement each : succession){
+        for (WebElement each : allsSuggestions){
             System.out.println(each.getText());
             if (each.getText().equals("Java")){
                 each.click();

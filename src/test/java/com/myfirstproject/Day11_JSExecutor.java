@@ -16,12 +16,19 @@ public class Day11_JSExecutor extends TestBase {
         Thread.sleep(3000);
 
         WebElement weOffer = driver.findElement(By.xpath("//*[.='WE OFFER']"));
+        // //*[.='WE OFFER']  dynamic x path alma yontemi
 
-//        1. Create jsexecutor object
-        JavascriptExecutor js = (JavascriptExecutor)driver;
+//        1. Create jsexecutor object  //casting yapariz driver i
+        JavascriptExecutor js = (JavascriptExecutor)driver;//casting yapiyoruz
 
-//        2. Execute JS commend
+//        2. Execute JS commend //komut `'we offer" hedefine kadar gidecek scroll down olacak
+        //!!!  onemli  ----arguments[0].scrollIntoView(true); === =>>bu jscript komutu
+        //bu komuttan target a kadar git dmk
         js.executeScript("arguments[0].scrollIntoView(true);",weOffer);
+        //js.executeScript("comand", webelement);
+        //daha sonra bu javascript commend larini testbase koyacagiz
+        //    // java script commend i burda testbase ekledik method icine koyduk ve istedgmzde cagirablrz
+
 
         Thread.sleep(3000);
 //        Scroll over to the Search input that is at the top of the page
@@ -36,6 +43,8 @@ public class Day11_JSExecutor extends TestBase {
         Thread.sleep(3000);
         WebElement weOffer = driver.findElement(By.xpath("//*[.='WE OFFER']"));
         scrollIntoViewJS(weOffer);//coming form TestBase
+        // java script commend i burda testbase ekledik method icine koyduk ve istedgmzde cagirablrz
+//methodu cagirip icine hedefmzi koyuyoruz sadece
         Thread.sleep(3000);
         WebElement searchBox = driver.findElement(By.xpath("//input[@type='search']"));
         scrollIntoViewJS(searchBox);//coming from TestBase
@@ -60,7 +69,8 @@ public class Day11_JSExecutor extends TestBase {
         clickByJS(LMSLogin);
     }
 
-    @Test
+    @Test  //web element yerine yazacagmz string i atar replace yapar
+    //send key ile ayni fakat click vs yok
     public void setValueByJSTest(){
         driver.get("https://techproeducation.com/");
         WebElement searchBox = driver.findElement(By.xpath("//input[@type='search']"));
@@ -71,9 +81,11 @@ public class Day11_JSExecutor extends TestBase {
     @Test
     public void getValueByJStest(){
         driver.get("https://www.carettahotel.com/");
-        WebElement checkIn = driver.findElement(By.id("checkin_date"));
+        WebElement checkIn = driver.findElement(By.id("checkin_date")); //bura seleiumdan ve bos dondi
 //        System.out.println(checkIn.getText());//returns empty
        getValueByJS("checkin_date");//returns the value of the element whose id=checkin_date
+        //bura jvascript ten gelir ve icini de okur sadece "" tirnak icinde id ile calsr bu method
+        //getValueBkJS kendi method umuz iciner sadece string parameter koyariz
     }
 
     @Test

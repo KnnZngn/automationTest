@@ -42,10 +42,15 @@ public abstract class TestBase {
     }
 
 //    creating a reusable method to scroll into view of an element
-    public void scrollIntoViewJS(WebElement element){
+    //scroll down metodu olusturduk java script ile
+// java script commend i burda testbase ekledik method icine koyduk ve istedgmzde cagirablrz
+    public void scrollIntoViewJS(WebElement element){ //1 parametreli webelement elementi koyacagiz
+        //commend asagidan geliyor target olarak webelement elementi koymamiz yeterli olacak
         JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("arguments[0].scrollIntoView(true);",element);
     }
+
+
 
     //    Scroll all the way down of a page
     public void scrollAllDownByJS(){
@@ -65,12 +70,14 @@ public abstract class TestBase {
 //    Set the value of an input using js executor. Params: WebElement element, String text
 //    This method changes the value attribute of an element.
 //    It changes the input text. NOT COMMON
+    //web element yerine yazacagmz string i atar replace yapar
     public void setValueByJS(WebElement element, String text){
         JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("arguments[0].setAttribute('value','"+text+"')",element);
     }
 
 //    get the value of an input. param: idOfElement
+    //!!!  IMPORTANT cunku seleniumda ve java da yok
     public void getValueByJS(String idOfElement){
         JavascriptExecutor js = (JavascriptExecutor)driver;
         String value=js.executeScript("return document.getElementById('"+idOfElement+"').value").toString();
